@@ -1,5 +1,12 @@
 $(function() {
     
+    //get value limit if already exists
+    
+    chrome.storage.sync.get('limit', function(budget) {
+        $('#limit').val(budget.limit);
+    });
+    
+    
     //Setup Limit
    $('#saveLimit').click(function(){ 
     var limit = $('#limit').val();
