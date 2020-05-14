@@ -26,6 +26,9 @@ $(function() {
                        message:"Ahho, u have reached"
                    };
                    chrome.notifications.create('limitNotif',notifOptions);
+                   
+                   //to show notification agagin and again
+                   chrome.notifications.clear('limitNotif'); 
                }
            });
            $('#total').text(newTotal);

@@ -35,6 +35,8 @@ chrome.contextMenus.onClicked.addListener(function(clickData){
                    };
                    chrome.notifications.create('limitNotif',notifOptions);
                         
+                        //to show notfication again and again
+                    chrome.notifications.clear('limitNotif');     
                         
                     }
                 });
@@ -44,4 +46,8 @@ chrome.contextMenus.onClicked.addListener(function(clickData){
         }
     }
     
+});
+
+chrome.storage.onChanged.addListener(function(changes, storageName){
+    chrome.browserAction.setBadgeText({"text": changes.total.newValue.toString()});
 });
