@@ -20,8 +20,18 @@ $(function() {
     //Reset Option
     
     $('#resetTotal').click(function(){
-        chrome.storage.sync.set({'total':0});
-        close();
+        chrome.storage.sync.set({'total':0},function(){
+            var notifOptions = {
+                       type :"basic",
+                       iconUrl: "icon16.png",
+                       title:"Total Reset Success",
+                       message:"Total Set to :0"
+                   };
+            chrome.notifications.create('limitNotIf',notifOptions)
+            
+        });
+        
+    
     });
     
     
