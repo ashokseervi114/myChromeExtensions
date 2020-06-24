@@ -12,7 +12,7 @@ function isInt(value) {
             parseInt(Number(value)) == value &&
         !isNaN(parseInt(value,10));
 }
-
+//context handle
 chrome.contextMenus.onClicked.addListener(function(clickData){
     
     if(clickData.menuItemId == "spendMoney" && clickData.selectionText) {
